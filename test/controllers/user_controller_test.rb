@@ -7,3 +7,5 @@ class UserControllerTest < ActionController::TestCase
   end
 
 end
+
+
