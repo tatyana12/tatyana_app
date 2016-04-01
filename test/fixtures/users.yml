@@ -1,1 +1,5 @@
-# empty
+tatyana:
+  name: Tatyana Polyakova
+  email: tatyana_pol@yahoo.com
+  password_digest: <%= User.digest('password') %>
+
