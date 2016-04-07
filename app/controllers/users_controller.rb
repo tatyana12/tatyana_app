@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   before_action :logged_in_user, only: [:index, :edit, :update]
   before_action :correct_user,   only: [:edit, :update]
 
@@ -9,6 +10,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+=======
+before_action :logged_in_user, only: [:index, :edit, :update]
+before_action :correct_user,   only: [:edit, :update]
+>>>>>>> me
   def show
     @user = User.find(params[:id])
   end
@@ -38,6 +43,10 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def index
+    @users = User.paginate(page: params[:page])
   end
   
 private
