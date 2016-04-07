@@ -20,6 +20,9 @@ before_action :correct_user,   only: [:edit, :update]
     end
   end
 
+  def edit
+  end
+
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
@@ -28,9 +31,7 @@ before_action :correct_user,   only: [:edit, :update]
       render 'edit'
     end
   end
-
   
-    
 private
 
     def user_params
@@ -54,4 +55,3 @@ private
       redirect_to(root_url) unless @user == current_user
     end
 end
-
