@@ -1,13 +1,19 @@
-tatyana:
-  name: Tatyana Polyakova
-  email: tatyana_pol@yahoo.com
+michael:
+  name: Michael Example
+  email: michael@example.com
   password_digest: <%= User.digest('password') %>
   admin: true
   activated: true
   activated_at: <%= Time.zone.now %>
-michael:
-  name: Michael Example
-  email: michael@example.com
+tatyana:
+  name: Tatyana Polyakova
+  email: tatyana_pol@yahoo.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+archer:
+  name: Sterling Archer
+  email: duchess@example.gov
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
@@ -33,5 +39,6 @@ user_<%= n %>:
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
-
 <% end %>
+
+  
