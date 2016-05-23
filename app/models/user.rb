@@ -118,6 +118,26 @@ private
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+    
+    
+    
+    
+    def account_active?
+      blocked_at.nil?
+    end
+    
+    
+    def active_for_authentication?
+      super && account_active?
+    end
+  
+  def inactive_message
+      account_active? ? super : :locked
+  end
+
+    
+    
+    
 end
 
  
