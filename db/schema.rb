@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512180853) do
+ActiveRecord::Schema.define(version: 20160528183049) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160512180853) do
     t.string   "activation_digest"
     t.boolean  "activated"
     t.datetime "activated_at"
+    t.boolean  "banned"
   end
 
 end
