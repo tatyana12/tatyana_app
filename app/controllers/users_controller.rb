@@ -82,6 +82,15 @@ class UsersController < ApplicationController
     
 
     # Before filters
+    
+    before_filter :deny_banned
+
+protected
+def deny_banned
+  if current_user.banned?
+    redirect_to root_path, :notice => "You are banned from this site."
+  end
+end
 
     # Confirms a logged-in user.
     def logged_in_user
@@ -99,4 +108,6 @@ class UsersController < ApplicationController
     end
 end
     
+
+
 
