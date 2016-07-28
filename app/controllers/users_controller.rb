@@ -1,4 +1,3 @@
-
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
                                         :following, :followers]
@@ -106,8 +105,12 @@ end
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
+<<<<<<< HEAD
 end
     
 
 
 
+=======
+end
+>>>>>>> b44cef4dbf7a0971d31ab8f6e8d13897fbdc479d
