@@ -3,6 +3,7 @@
               password:              "t0pS3cret!",
              password_confirmation: "t0pS3cret!",
              activated: true,
+             banned: false,
              activated_at: Time.zone.now)
 
  User.create!(name:  "NEW ADMIN USER",
@@ -11,6 +12,7 @@
              password_confirmation: "SECRET_PASSWORD",
               admin:     true,
              activated: true,
+             banned: false,
               activated_at: Time.zone.now)
  
  User.create!(name:  "Example User",
@@ -19,6 +21,7 @@
              password_confirmation: "fooBar",
              admin:     true,
              activated: true,
+             banned: false,
               activated_at: Time.zone.now)
  
 99.times do |n|
@@ -30,6 +33,7 @@
                password:              password,
                password_confirmation: password,
               activated: true,
+              banned: false,
               activated_at: Time.zone.now)
  end
  

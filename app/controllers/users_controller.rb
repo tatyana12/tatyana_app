@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
                                         :following, :followers]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:destroy, :banned]
   
   def index
     @users = User.where(activated: true).paginate(page: params[:page])
@@ -64,13 +64,18 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
  
- 
+ def banned
+  if current_user.banned?
+    redirect_to root_path, :notice => "You are banned from this site."
+  end
+end
+
  
  private
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :banned)
     end
     
     
