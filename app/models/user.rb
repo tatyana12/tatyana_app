@@ -128,7 +128,7 @@ private
     
     
     def active_for_authentication?
-      super && account_active?
+  super && !self.blocked
     end
   
   def inactive_message
@@ -141,3 +141,4 @@ private
 end
 
  
+
