@@ -64,10 +64,7 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
  
- def banned
-  if current_user.banned?
-    redirect_to root_path, :notice => "You are banned from this site."
-  end
+ 
 end
 
  
@@ -101,6 +98,13 @@ end
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
+    
+    def banned
+  if current_user.banned?
+    redirect_to root_path, :notice => "You are banned from this site."
+  end
+    
+    
 end
     
 
