@@ -127,9 +127,10 @@ private
     end
     
     
-    def active_for_authentication?
-  super && !self.blocked
+   def active_for_authentication?
+      super && account_active?
     end
+
   
   def inactive_message
       account_active? ? super : :locked
@@ -141,4 +142,6 @@ private
 end
 
  
+
+
 
