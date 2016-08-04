@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160713040435) do
     t.string   "activation_digest"
     t.boolean  "activated"
     t.datetime "activated_at"
-   
+    t.boolean  "blacklisted",       default: false
     t.boolean  "banned",       default: false
   end
 
