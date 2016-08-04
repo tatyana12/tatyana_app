@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20160713040435) do
     t.boolean  "activated"
     t.datetime "activated_at"
     t.boolean  "banned"
-    t.boolean  "blacklisted",       default: false
+    
   end
 
 end
