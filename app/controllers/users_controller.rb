@@ -100,7 +100,7 @@ end
     end
     
     def banned
-  if current_user.banned?
+  if current_user.banned? && current_user?(@user)
     redirect_to root_path, :notice => "You are banned from this site."
   end
     
