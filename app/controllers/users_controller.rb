@@ -99,12 +99,13 @@ end
       redirect_to(root_url) unless current_user?(@user)
     end
     
-    def banned
-  if current_user.banned? && current_user?(@user)
+  def banned
+       unless banned?
+    flash[:danger] = "You are banned"
     redirect_to root_path, :notice => "You are banned from this site."
+        end
+    
+    
   end
-    
-    
-end
     
 
