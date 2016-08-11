@@ -51,10 +51,11 @@ class UsersController < ApplicationController
   end
   
     def banned
-       unless banned?
-    flash[:danger] = "You are banned"
-    redirect_to root_path, :notice => "You are banned from this site."
-        end
+    User.find(params[:id]).destroy
+    flash[:danger] = "User banned"
+    redirect_to users_url
+  end
+  
     
   
   
@@ -74,7 +75,6 @@ class UsersController < ApplicationController
   end
  
  
-end
 
  
  private
