@@ -50,6 +50,15 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
+    def banned
+       unless banned?
+    flash[:danger] = "You are banned"
+    redirect_to root_path, :notice => "You are banned from this site."
+        end
+    
+  
+  
+  
   def following
     @title = "Following"
     @user  = User.find(params[:id])
@@ -99,13 +108,6 @@ end
       redirect_to(root_url) unless current_user?(@user)
     end
     
-  def banned
-       unless banned?
-    flash[:danger] = "You are banned"
-    redirect_to root_path, :notice => "You are banned from this site."
-        end
-    
-    
-  end
+ end
     
 
