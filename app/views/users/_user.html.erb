@@ -5,8 +5,10 @@
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
                                   
-     | <%= link_to "banned", user, method: :banned,
-     
-                                  data: { confirm: "You sure?" }  %>                              
+     | <%= link_to "banned", banned_path(:id => user.id), method: :get,
+                                  data: { confirm: "You sure?" }  %>                             
   <% end %>
 </li>
+
+
+

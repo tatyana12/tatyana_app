@@ -50,12 +50,13 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
-    def banned
-    User.find(params[:id]).destroy
-    flash[:danger] = "User banned"
-    redirect_to users_url
+   def banned
+      @user = User.find(params[:id])
+      @user.banned = true
+      @user.save!
+      flash[:success] = "User #{@user.name} has been banned!"
+      redirect_to users_url
   end
-  
     
   
   
