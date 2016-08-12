@@ -17,8 +17,8 @@
  
  User.create!(name:  "Example User",
               email: "example@railstutorial.org",
-              password:              "fooBar",
-             password_confirmation: "fooBar",
+              password:              "foobar",
+             password_confirmation: "foobar",
              admin:     true,
              activated: true,
              banned: false,
