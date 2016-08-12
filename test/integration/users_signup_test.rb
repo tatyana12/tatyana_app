@@ -19,7 +19,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div.field_with_errors'
   end
 
-   test "valid signup information with account activation" do
+    test "valid signup information with account activation" do
     get signup_path
     name  = "Example User"
     email = "user@example.com"
